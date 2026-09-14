@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+.mainBanner {
+    @apply flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black;
+}
+
+.bannerGlass {
+    background-color: rgba(217, 183, 248, 0.301);
+    position: absolute;
+    @apply flex flex-col items-center justify-center gap-6 px-4 py-8 sm:py-12;
+}
