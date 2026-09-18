@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+.header {
+    @apply sticky top-0 z-50 w-full bg-white/90 shadow-lg shadow-purple-900/50 backdrop-blur-md transition-all;
+    animation: header 2s ease 0s 1 normal forwards;
+    border-bottom: 3px solid rgb(33, 10, 70);
+}
+
+@keyframes header {
+    0% {
+        opacity: 0;
+        transform: translateY(-250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.conteudoHeader {
+    @apply container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8;
+}

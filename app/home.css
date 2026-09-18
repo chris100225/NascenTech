@@ -1,0 +1,297 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+.mainBanner {
+    @apply flex h-[90vh] flex-col flex-1 items-start justify-center bg-zinc-50 font-sans dark:bg-black;
+}
+
+.bannerGlass {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(17px);
+    -webkit-backdrop-filter: blur(17px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 60px 30px rgba(255, 255, 255, 3);
+    @apply flex h-120 w-220 flex-col text-pretty items-start justify-around ml-20 px-18 py-5 sm:py-12;
+}
+
+.bannerAlinhamento {
+    @apply flex h-120 w-160 flex-col items-center justify-around text-center sm:items-start sm:text-left;
+}
+
+.tituloBanner {
+    animation: header 2s ease 0s 1 normal forwards;
+    @apply text-4xl text-black font-medium text-justify;
+}
+
+.subtituloBanner {
+    animation: header 2s ease 0s 1 normal forwards;
+    @apply text-xl text-black font-medium text-justify;
+}
+
+@keyframes subtituloBanner {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tituloBanner {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.botao1Banner {
+    @apply inline-flex h-10 w-60 items-center justify-center rounded-[10px] bg-purple-950 px-6 text-base font-medium text-white shadow-sm transition-all hover:bg-purple-900 hover:shadow-purple-900/20 active:scale-100;
+}
+
+.botao2Banner {
+    @apply inline-flex h-10 w-60 items-center justify-center rounded-[10px] bg-transparent border-solid border-2 border-purple-950 text-purple-950 font-medium;
+}
+
+/* ==========================================================================
+   CONFIGURAÇÃO E IMPORTS DO PROJETO
+   ========================================================================== */
+/* 
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css"; */
+
+/* ==========================================================================
+   LAYOUT GERAL E CONTAINER
+   ========================================================================== */
+/* .page-container {
+    @apply flex min-h-screen flex-col bg-white text-zinc-900 antialiased selection:bg-purple-100 selection:text-purple-900;
+}
+
+.site-header {
+    @apply sticky top-0 z-50 w-full border-b border-purple-100/60 bg-white/90 backdrop-blur-md transition-all;
+}
+
+.header-inner {
+    @apply container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8;
+}
+
+.logo-brand {
+    @apply group flex items-center gap-2.5 text-xl font-bold tracking-tight text-purple-950;
+}
+
+.logo-icon {
+    @apply flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-purple-800 to-purple-600 text-white shadow-md shadow-purple-500/20 transition-transform group-hover:scale-105;
+}
+
+.nav-desktop {
+    @apply hidden items-center gap-8 md:flex;
+}
+
+.nav-link {
+    @apply text-sm font-medium text-zinc-600 transition-colors hover:text-purple-700;
+}
+
+.btn-header-cta {
+    @apply inline-flex h-10 items-center justify-center rounded-full bg-purple-950 px-6 text-sm font-semibold text-white shadow-sm transition-all hover:bg-purple-900 active:scale-95;
+} */
+
+/* ==========================================================================
+   2. HERO SECTION
+   ========================================================================== */
+/* .hero-section {
+    @apply relative overflow-hidden bg-gradient-to-b from-purple-50/50 via-white to-white py-20 lg:py-28;
+}
+
+.hero-glow-effect {
+    @apply pointer-events-none absolute -right-36 top-1/2 h-[550px] w-[550px] -translate-y-1/2 rounded-full bg-purple-200/40 blur-3xl;
+}
+
+.hero-tag {
+    @apply inline-block text-xs font-bold tracking-widest text-purple-700 uppercase;
+}
+
+.hero-headline {
+    @apply text-3xl font-extrabold tracking-tight text-purple-950 sm:text-5xl sm:leading-tight lg:text-6xl;
+}
+
+.hero-headline-highlight {
+    @apply text-purple-600 underline decoration-purple-300 underline-offset-8;
+}
+
+.hero-description {
+    @apply max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg;
+}
+
+.hero-btn-primary {
+    @apply inline-flex h-12 items-center justify-center rounded-xl bg-purple-950 px-8 text-sm font-semibold text-white shadow-md shadow-purple-950/20 transition-all hover:bg-purple-900 active:scale-95;
+}
+
+.hero-btn-secondary {
+    @apply inline-flex h-12 items-center justify-center rounded-xl border border-purple-200 bg-white px-8 text-sm font-semibold text-purple-950 transition-all hover:border-purple-300 hover:bg-purple-50/50 active:scale-95;
+} */
+
+/* ==========================================================================
+   3. SEÇÃO SOBRE A NASCENTECH
+   ========================================================================== */
+/* .about-section {
+    @apply py-20 lg:py-24;
+}
+
+.section-tag {
+    @apply text-xs font-bold tracking-widest text-purple-700 uppercase;
+}
+
+.section-title {
+    @apply text-2xl font-bold tracking-tight text-purple-950 sm:text-4xl;
+}
+
+.about-grid-text {
+    @apply grid grid-cols-1 gap-6 pt-4 text-base leading-relaxed text-zinc-600 md:grid-cols-3;
+} */
+
+/* ==========================================================================
+   4. ORIGEM E RECONHECIMENTO (BADGES)
+   ========================================================================== */
+/* .recognition-section {
+    @apply border-y border-purple-100 bg-purple-50/30 py-16;
+}
+
+.recognition-card {
+    @apply flex flex-col items-center text-center;
+}
+
+.recognition-icon-box {
+    @apply flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm text-purple-800;
+}
+ */
+/* ==========================================================================
+   5. SEÇÃO DESAFIOS (DARK PURPLE SECTION COM DONUT CHARTS)
+   ========================================================================== */
+/* .challenges-section {
+    @apply relative bg-purple-950 py-24 text-white;
+}
+
+.challenges-tag {
+    @apply text-xs font-bold tracking-widest text-purple-300 uppercase;
+}
+
+.metric-card {
+    @apply flex flex-col justify-between rounded-2xl bg-white p-8 text-zinc-900 shadow-xl;
+}
+
+.metric-donut-container {
+    @apply my-8 flex items-center justify-center;
+}
+
+.donut-wrapper {
+    @apply relative flex h-36 w-36 items-center justify-center;
+}
+
+.donut-svg {
+    @apply h-full w-full -rotate-90;
+}
+
+.donut-value {
+    @apply absolute text-2xl font-black text-purple-950;
+}
+
+.pain-pill {
+    @apply flex items-center justify-between rounded-xl bg-white/10 p-5 backdrop-blur-md border border-white/10;
+} */
+
+/* ==========================================================================
+   6. SERVIÇOS
+   ========================================================================== */
+/* .service-card {
+    @apply group flex flex-col justify-between rounded-3xl border border-purple-100 bg-purple-50/40 p-10 transition-all hover:bg-white hover:shadow-xl hover:shadow-purple-900/5;
+}
+
+.service-icon-box {
+    @apply flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-900 text-white shadow-md shadow-purple-900/20;
+}
+
+.service-divider {
+    @apply my-4 h-0.5 w-16 bg-purple-300;
+} */
+
+/* ==========================================================================
+   7. SETORES DE ATUAÇÃO
+   ========================================================================== */
+/* .sector-card {
+    @apply flex items-center gap-3 rounded-xl border border-zinc-200/80 bg-white p-4 shadow-sm transition-all hover:border-purple-300 hover:shadow-md;
+}
+
+.sector-icon-box {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-purple-50 text-purple-800;
+} */
+
+/* ==========================================================================
+   8. BIG NUMBERS / MÉTRICAS
+   ========================================================================== */
+/* .metric-big-number {
+    @apply block text-4xl font-extrabold text-purple-950 sm:text-5xl;
+}
+
+.metric-big-label {
+    @apply mt-2 text-xs font-medium text-zinc-600 sm:text-sm;
+} */
+
+/* ==========================================================================
+   9. METODOLOGIA (ACORDEÃO)
+   ========================================================================== */
+/* .accordion-wrapper {
+    @apply overflow-hidden rounded-xl bg-purple-950 text-white shadow-md transition-all;
+}
+
+.accordion-trigger {
+    @apply flex w-full items-center justify-between p-5 text-left transition-colors hover:bg-purple-900/90;
+}
+
+.accordion-body {
+    @apply border-t border-purple-800/60 bg-purple-900/40 p-5 text-sm leading-relaxed text-zinc-200;
+} */
+
+/* ==========================================================================
+   10. CONTATO & FORMULÁRIO
+   ========================================================================== */
+/* .contact-container-card {
+    @apply grid grid-cols-1 gap-12 rounded-3xl border border-purple-200/80 bg-white/80 p-8 shadow-xl backdrop-blur-xl lg:grid-cols-12 lg:p-14;
+}
+
+.contact-form {
+    @apply space-y-4 rounded-2xl border border-purple-100 bg-white p-6 shadow-sm sm:p-8;
+}
+
+.form-label {
+    @apply block text-xs font-bold text-zinc-700 uppercase;
+}
+
+.form-input {
+    @apply mt-1.5 w-full rounded-lg border border-zinc-200 bg-zinc-50/50 px-4 py-2.5 text-sm text-zinc-900 outline-none transition-all placeholder:text-zinc-400 focus:border-purple-600 focus:bg-white focus:ring-2 focus:ring-purple-600/20;
+}
+
+.btn-submit {
+    @apply w-full rounded-xl bg-purple-950 py-3 text-sm font-bold text-white shadow-md transition-all hover:bg-purple-900 active:scale-[0.99];
+} */
+
+/* ==========================================================================
+   11. FOOTER
+   ========================================================================== */
+/* .site-footer {
+    @apply border-t border-purple-900/10 bg-purple-950 py-10 text-white;
+} */
