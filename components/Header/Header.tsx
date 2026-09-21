@@ -12,7 +12,7 @@ const Header = () => {
                 >
                     {/* Ícone espiral representando a marca NascenTech */}
                     <span className="flex h-50 w-50 items-center justify-center transition-transform group-hover:scale-105">
-                        <img src="/Logo 2.png" alt="Produto vendido pela loja."></img>
+                        <img src="/Logo 2.png" alt="Logo nascentech" />
                     </span>
                 </Link>
 
@@ -42,8 +42,7 @@ const Header = () => {
                 <div className="flex items-center gap-4">
                     <Link
                         href="#contato"
-                        className="inline-flex h-9 w-30 items-center justify-center rounded-[10px] bg-purple-950 px-6 text-m font-regular text-white shadow-sm transition-all hover:bg-purple-900 hover:shadow-purple-900/20 active:scale-100"
-                    >
+                        className="inline-flex h-9 w-30 items-center justify-center rounded-[10px] bg-purple-950 px-6 text-m font-regular text-white shadow-sm transition-all duration-200 hover:bg-purple-900 hover:shadow-purple-900/20 hover:scale-105"                    >
                         Contato
                     </Link>
                 </div>

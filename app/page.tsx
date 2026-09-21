@@ -1,13 +1,16 @@
+'use client';
 import './home.css';
 import GhostFibers from "@/components/GhostFibers/GhostFibers";
 import Header from "@/components/Header/Header";
 import WebThreads from '@/components/WebThreads/WebThreads';
+import { ArrowRight, Award, Globe2, Trophy, Users2 } from 'lucide-react';
 
 export default function Home() {
   return (<>
     <main>
       <Header />
-      <div className="mainBanner">
+      <section className="banner">
+
         <WebThreads
           color1="#6d28d9"
           color2="#7C3AED"
@@ -38,22 +41,66 @@ export default function Home() {
             <h2 className="subtituloBanner"><span className='text-purple-950'>CONSULTORIA EM TECNOLOGIA E FINANÇAS</span></h2>
             <h1 className="tituloBanner"><span className='text-purple-950'>Tecnologia</span> deve ser tratada como qualquer outro <span className='text-purple-950'>investimento do seu negócio.</span></h1>
             <h2 className="subtituloBanner">Ajudamos CIOs, CFOs e líderes de tecnologia a transformar gastos de TI em decisões estratégicas, com disciplina financeira, transparência e visão de negócio.</h2>
-           
+
             <div className="inline-flex gap-4">
               <button className="botao1Banner">
                 <a href="#contato"></a>
                 Agende uma conversa
               </button>
-            <button className="botao2Banner">
-              <a href="#contato"></a>
-              Conheça nossas soluções
-            </button>
+              <button className="botao2Banner">
+                <a href="#contato"></a>
+                Conheça nossas soluções
+              </button>
             </div>
 
           </div>
+        </div>
+      </section>
+      <section className="sobre">
+        <h1 className="tituloSobre">Sobre a NascenTech</h1>
+        <h2 className="subtituloSobre"><span className='text-purple-950'>Tecnologia</span> orientada à <span className='text-purple-950'>estratégia do negócio.</span></h2>
+        <p className="descricaoSobre">A NascenTech acredita que decisões sobre tecnologia devem ser conduzidas com a mesma disciplina, transparência e visão estratégica aplicadas aos demais investimentos de negócio.<br /><br />
+
+          Apoiamos organizações em seus diferentes ciclos de evolução, conectando TBM, FinOps, transformação empresarial e tecnologia à geração de valor sustentável.<br /><br />
+
+          Nossa atuação é liderada por fundadores com experiência internacional em organizações Fortune 500 na América do Norte e na América Latina, respaldada por reconhecimentos, certificações e resultados comprovados.</p>
+        <a href="#contato" className="botaoSobre">
+          Conheça a NascenTech <ArrowRight className="w-10 h-10" />
+        </a>
+      </section>
+
+      <section className="reconhecimento">
+        <h1 className="tituloReconhecimento">Credenciais e Reconhecimento</h1>
+        <div className="flex flex-inline justify-around w-280">
+
+          <div className="cardReconhecimento">
+            <img src="/Pioneira.svg" alt="Simbolo de certificação genérico" />
+            <p className="subtituloCard">Pioneira LatAm</p>
+            <p className="descricaoCard">Única certificada na américa latina</p>
+          </div>
+
+          <div className="cardReconhecimento">
+            <img src="/Award.svg" alt="Simbolo de certificação genérico" />
+            <p className="subtituloCard">TBM Award 2024</p>
+            <p className="descricaoCard">Excelência que inspira</p>
+          </div>
+
+          <div className="cardReconhecimento">
+            <img src="/Global.svg" alt="Simbolo de certificação genérico" />
+            <p className="subtituloCard">Co-Chair TBM Council Global</p>
+            <p className="descricaoCard">Liderança Global</p>
+          </div>
+
+          <div className="cardReconhecimento">
+            <img src="/Conselho.svg" alt="Simbolo de certificação genérico" />
+            <p className="subtituloCard">Co-Chair TBM Council Global</p>
+            <p className="descricaoCard">Liderança Global</p>
+          </div>
 
         </div>
-      </div>
+      </section>
+
+
     </main>
   </>
   );
@@ -211,138 +258,6 @@ export default function Home() {
 
 //   return (
 //     <div className="flex min-h-screen flex-col bg-white text-zinc-900 antialiased selection:bg-purple-100 selection:text-purple-900">
-
-//       {/* ====================================================================
-//           1. HEADER & NAVEGAÇÃO PRINCIPAL
-//           Semântica: <header> com <nav> e links semânticos
-//           ==================================================================== */}
-//       <header className="sticky top-0 z-50 w-full border-b border-purple-100/60 bg-white/90 backdrop-blur-md transition-all">
-//         <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-
-//           {/* Identidade Visual / Logotipo */}
-//           <Link
-//             href="/"
-//             className="group flex items-center gap-2.5 text-xl font-bold tracking-tight text-purple-950"
-//             aria-label="NascenTech Início"
-//           >
-//             {/* Ícone espiral representando a marca NascenTech */}
-//             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-purple-800 to-purple-600 text-white shadow-md shadow-purple-500/20 transition-transform group-hover:scale-105">
-//               <span className="text-lg font-black">N</span>
-//             </span>
-//             <span className="text-2xl font-extrabold tracking-tight text-purple-950">
-//               Nascen<span className="text-purple-600">Tech</span>
-//             </span>
-//           </Link>
-
-//           {/* Menu de Navegação Desktop */}
-//           <nav aria-label="Navegação Principal" className="hidden items-center gap-8 md:flex">
-//             <Link
-//               href="#beneficios"
-//               className="text-sm font-medium text-zinc-600 transition-colors hover:text-purple-700"
-//             >
-//               Benefícios
-//             </Link>
-//             <Link
-//               href="#servicos"
-//               className="text-sm font-medium text-zinc-600 transition-colors hover:text-purple-700"
-//             >
-//               Soluções
-//             </Link>
-//             <Link
-//               href="#sobre"
-//               className="text-sm font-medium text-zinc-600 transition-colors hover:text-purple-700"
-//             >
-//               Sobre Nós
-//             </Link>
-//           </nav>
-
-//           {/* Botão de Contato (CTA Primário do Header) */}
-//           <div className="flex items-center gap-4">
-//             <Link
-//               href="#contato"
-//               className="inline-flex h-10 items-center justify-center rounded-full bg-purple-950 px-6 text-sm font-semibold text-white shadow-sm transition-all hover:bg-purple-900 hover:shadow-purple-900/20 active:scale-95"
-//             >
-//               Contato
-//             </Link>
-//           </div>
-//         </div>
-//       </header>
-
-//       {/* CONTEÚDO PRINCIPAL DO DOCUMENTO (<main>) */}
-//       <main className="flex-1">
-
-//         {/* ====================================================================
-//             2. HERO SECTION
-//             Semântica: <section> contendo o <h1> da página e CTAs centrais
-//             ==================================================================== */}
-//         <section
-//           aria-labelledby="hero-title"
-//           className="relative overflow-hidden bg-gradient-to-b from-purple-50/50 via-white to-white py-20 lg:py-28"
-//         >
-//           {/* Efeito decorativo de fundo simulando a onda de energia/fibras */}
-//           <div
-//             aria-hidden="true"
-//             className="pointer-events-none absolute -right-36 top-1/2 h-[550px] w-[550px] -translate-y-1/2 rounded-full bg-purple-200/40 blur-3xl"
-//           />
-
-//           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-//             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-
-//               {/* Coluna de Texto (Hero Copy) */}
-//               <div className="space-y-6 lg:col-span-8">
-//                 {/* Tag de categoria / Subtítulo alto */}
-//                 <p className="inline-block text-xs font-bold tracking-widest text-purple-700 uppercase">
-//                   CONSULTORIA EM TECNOLOGIA E FINANÇAS
-//                 </p>
-
-//                 {/* H1 Principal: Objetivo central de negócio */}
-//                 <h1
-//                   id="hero-title"
-//                   className="text-3xl font-extrabold tracking-tight text-purple-950 sm:text-5xl sm:leading-tight lg:text-6xl"
-//                 >
-//                   Tecnologia deve ser tratada como qualquer outro{" "}
-//                   <span className="text-purple-600 underline decoration-purple-300 underline-offset-8">
-//                     investimento do seu negócio.
-//                   </span>
-//                 </h1>
-
-//                 {/* Descrição de proposta de valor */}
-//                 <p className="max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg">
-//                   Ajudamos CIOs, CFOs e líderes de tecnologia a transformar gastos de TI em
-//                   decisões estratégicas, com disciplina financeira, transparência e visão de negócio.
-//                 </p>
-
-//                 {/* Botões de Ação */}
-//                 <div className="flex flex-wrap items-center gap-4 pt-2">
-//                   <Link
-//                     href="#contato"
-//                     className="inline-flex h-12 items-center justify-center rounded-xl bg-purple-950 px-8 text-sm font-semibold text-white shadow-md shadow-purple-950/20 transition-all hover:bg-purple-900 active:scale-95"
-//                   >
-//                     Agende uma conversa
-//                   </Link>
-
-//                   <Link
-//                     href="#servicos"
-//                     className="inline-flex h-12 items-center justify-center rounded-xl border border-purple-200 bg-white px-8 text-sm font-semibold text-purple-950 transition-all hover:border-purple-300 hover:bg-purple-50/50 active:scale-95"
-//                   >
-//                     Conheça nossas soluções
-//                   </Link>
-//                 </div>
-//               </div>
-
-//               {/* Coluna Gráfica Decorativa (Ondas 3D do Figma) */}
-//               <div className="relative hidden lg:col-span-4 lg:block" aria-hidden="true">
-//                 <div className="relative h-80 w-full rounded-2xl bg-gradient-to-tr from-purple-100/70 to-purple-200/40 p-6 backdrop-blur-md">
-//                   <div className="absolute inset-0 flex items-center justify-center">
-//                     {/* Elemento gráfico SVG que ecoa as fitas fluídas roxas */}
-//                     <div className="h-44 w-44 rounded-full border-4 border-dashed border-purple-400/40 animate-spin-slow" />
-//                   </div>
-//                 </div>
-//               </div>
-
-//             </div>
-//           </div>
-//         </section>
 
 //         {/* ====================================================================
 //             3. SEÇÃO SOBRE A NASCENTECH

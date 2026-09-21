@@ -2,8 +2,11 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-.mainBanner {
+
+
+.banner {
     @apply flex h-[90vh] flex-col flex-1 items-start justify-center bg-zinc-50 font-sans dark:bg-black;
+
 }
 
 .bannerGlass {
@@ -60,45 +63,61 @@
 }
 
 .botao1Banner {
-    @apply inline-flex h-10 w-60 items-center justify-center rounded-[10px] bg-purple-950 px-6 text-base font-medium text-white shadow-sm transition-all hover:bg-purple-900 hover:shadow-purple-900/20 active:scale-100;
+    @apply inline-flex h-10 w-60 items-center justify-center rounded-[10px] bg-purple-950 px-6 text-base font-medium text-white shadow-sm transition-all duration-200 hover:bg-purple-900 hover:shadow-purple-900/20 hover:scale-105;
 }
 
 .botao2Banner {
-    @apply inline-flex h-10 w-60 items-center justify-center rounded-[10px] bg-transparent border-solid border-2 border-purple-950 text-purple-950 font-medium;
+    @apply inline-flex h-10 w-60 items-center justify-center rounded-[10px] bg-transparent border-solid border-2 border-purple-950 text-purple-950 font-medium duration-200 hover:scale-105;
 }
 
-/* ==========================================================================
-   CONFIGURAÇÃO E IMPORTS DO PROJETO
-   ========================================================================== */
-/* 
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css"; */
+.sobre {
+    background: #ffffff;
+    background: linear-gradient(207deg, rgba(255, 255, 255, 1) 24%, rgba(227, 219, 234, 1) 76%, rgba(188, 169, 204, 1) 100%);
+    @apply text-black flex flex-col items-center justify-around p-20 h-180;
+}
+
+.tituloSobre {
+    @apply text-left text-4xl uppercase text-purple-950 font-medium underline w-280;
+}
+
+.subtituloSobre {
+    @apply text-left text-4xl font-medium w-280;
+}
+
+.descricaoSobre {
+    @apply text-justify font-medium text-2xl w-280;
+}
+
+.botaoSobre {
+    @apply inline-flex h-10 w-280 items-center justify-end text-2xl text-purple-950 font-semibold duration-200 hover:scale-105;
+}
+
+.reconhecimento {
+    @apply flex flex-col items-center justify-around p-20 h-180 bg-violet-300;
+}
+
+.cardReconhecimento {
+    @apply flex flex-col items-center justify-around p-8 rounded-[10px] border-solid border-2 border-purple-950 w-60 h-85;
+}
+
+.tituloReconhecimento {
+    @apply text-center text-4xl uppercase text-purple-950 font-medium underline text-purple-950 text-4xl;
+}
+
+.subtituloCard {
+    @apply text-purple-950 font-medium text-xl font-semibold text-center;
+}
+
+.descricaoCard {
+    @apply text-purple-950 font-medium text-lg text-center;
+}
+
+
 
 /* ==========================================================================
    LAYOUT GERAL E CONTAINER
    ========================================================================== */
-/* .page-container {
-    @apply flex min-h-screen flex-col bg-white text-zinc-900 antialiased selection:bg-purple-100 selection:text-purple-900;
-}
-
-.site-header {
-    @apply sticky top-0 z-50 w-full border-b border-purple-100/60 bg-white/90 backdrop-blur-md transition-all;
-}
-
-.header-inner {
-    @apply container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8;
-}
-
-.logo-brand {
-    @apply group flex items-center gap-2.5 text-xl font-bold tracking-tight text-purple-950;
-}
-
-.logo-icon {
-    @apply flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-purple-800 to-purple-600 text-white shadow-md shadow-purple-500/20 transition-transform group-hover:scale-105;
-}
-
-.nav-desktop {
+/* .nav-desktop {
     @apply hidden items-center gap-8 md:flex;
 }
 
