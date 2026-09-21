@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "./Header.css";
+import Logo from "@/public/Logo.png";
 
 const Header = () => {
     return (
@@ -12,7 +13,7 @@ const Header = () => {
                 >
                     {/* Ícone espiral representando a marca NascenTech */}
                     <span className="flex h-50 w-50 items-center justify-center transition-transform group-hover:scale-105">
-                        <img src="/Logo 2.png" alt="Logo nascentech" />
+                        <img src={Logo.src} alt="Logo nascentech" />
                     </span>
                 </Link>
 

@@ -154,6 +154,7 @@ export default function Home() {
 
         </div>
       </section>
+      
 
       <section className="solucoes">
         <h1 className='tituloSolucoes'>Soluções que transformam tecnologia em valor</h1>
