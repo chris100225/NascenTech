@@ -3,7 +3,56 @@ import './home.css';
 import GhostFibers from "@/components/GhostFibers/GhostFibers";
 import Header from "@/components/Header/Header";
 import WebThreads from '@/components/WebThreads/WebThreads';
-import { ArrowRight, Award, Globe2, Trophy, Users2 } from 'lucide-react';
+import { ArrowRight, Award, FileSpreadsheet, Gauge, Globe2, TrendingDown, Trophy, Users2 } from 'lucide-react';
+
+
+// Dados para os gráficos da seção soluções
+interface StatMetric {
+  percentage: number;
+  title: string;
+  description: string;
+  source: string;
+}
+
+interface SectorItem {
+  id: string;
+  name: string;
+  icon: React.ElementType;
+}
+
+interface StepItem {
+  id: number;
+  stepNumber: string;
+  title: string;
+  icon: React.ElementType;
+  description: string;
+}
+
+
+// 1. Métricas de Desafio (Gráficos circulares da seção roxa)
+const challengeMetrics: StatMetric[] = [
+  {
+    percentage: 62,
+    title: "Falta de transparência nos custos de TI",
+    description:
+      "dos líderes não sabem exatamente para onde vai cada centavo investido em nuvem e licenças.",
+    source: "Fonte: Gartner 2024",
+  },
+  {
+    percentage: 67,
+    title: "Falta de alinhamento com o negócio",
+    description:
+      "dos CFOs consideram que os investimentos em tecnologia não geram o retorno estratégico esperado.",
+    source: "Fonte: McKinsey Global",
+  },
+  {
+    percentage: 32,
+    title: "Desperdício com Cloud e SaaS",
+    description:
+      "do orçamento total de TI é desperdiçado em recursos ociosos e ferramentas sobrepostas.",
+    source: "Fonte: Flexera State of Cloud",
+  },
+];
 
 export default function Home() {
   return (<>
@@ -90,9 +139,13 @@ export default function Home() {
             <p className="subtituloCard">Co-Chair TBM Council Global</p>
             <p className="descricaoCard">Liderança Global</p>
           </div>
-
           <div className="cardReconhecimento">
-            <img src="/Conselho.svg" alt="Simbolo de certificação genérico" />
+            <svg width="120" height="145" viewBox="0 0 120 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M53.7638 104.411L33.6187 141.405C32.126 144.098 28.2644 143.903 27.0367 141.029L20.7755 126.424L5.4128 128.607C2.39941 129.029 0.234231 125.732 1.71303 122.99L22.3827 84.9739L22.751 87.34C23.6578 92.9998 28.2951 97.0802 33.8252 97.0802C34.4083 97.0802 34.9943 97.0342 35.5802 96.9452L39.2214 96.3881L41.2554 99.5325C43.3341 102.832 46.8442 104.819 50.6779 104.819C51.7298 104.833 52.7677 104.698 53.7638 104.411Z" fill="#371762" />
+              <path d="M114.39 128.621L99.0271 126.438L92.7659 141.043C91.5522 143.917 87.6766 144.098 86.1839 141.419L66.0527 104.411C67.0488 104.684 68.0868 104.833 69.1108 104.833C72.9445 104.833 76.4545 102.846 78.5332 99.5495L80.5226 96.4024L84.1638 96.9594C84.7944 97.0485 85.3775 97.0944 85.9634 97.0944C91.5075 97.0944 96.1448 93.014 97.0377 87.3542L97.4032 84.991L118.076 123.007C119.582 125.746 117.417 129.029 114.39 128.621Z" fill="#371762" />
+              <path d="M106.08 51.6871L101.382 45.723C100.709 44.8673 100.592 43.6928 101.075 42.6993L104.47 35.8479C105.143 34.4782 104.615 32.7926 103.284 32.0977L96.6271 28.6059C95.6784 28.1091 95.0925 27.0697 95.151 25.9699L95.5445 18.3087C95.6198 16.7724 94.4786 15.463 92.9859 15.3711L85.5389 14.9662C84.4702 14.9059 83.5355 14.2139 83.1533 13.1744L80.4775 6.00709C79.9362 4.56272 78.3709 3.85346 76.9814 4.39617L70.0171 7.14995C69.0238 7.54335 67.8826 7.30214 67.1349 6.51822L61.8531 1.08531C60.8012 -0.000117809 59.074 -0.000117809 58.0221 1.08531L52.7403 6.51822C51.9786 7.30214 50.8542 7.54335 49.8581 7.14995L42.8938 4.39617C41.4903 3.8391 39.925 4.56272 39.3977 6.00709L36.7219 13.1744C36.3397 14.1966 35.405 14.9059 34.3363 14.9662L26.8893 15.3711C25.3994 15.4458 24.2415 16.7724 24.3307 18.3087L24.7242 25.9699C24.7827 27.0697 24.1996 28.1091 23.2481 28.6059L16.5908 32.0977C15.2599 32.7926 14.7325 34.4782 15.405 35.8479L18.8006 42.6993C19.2833 43.6756 19.1661 44.8673 18.4937 45.723L13.7978 51.6871C12.8603 52.8903 13.0361 54.6362 14.1912 55.6154L19.9864 60.4481C20.8179 61.1402 21.1695 62.2715 20.8932 63.3397L18.9178 70.7483C18.5355 72.2386 19.3865 73.7576 20.8346 74.1654L28.0473 76.1525C29.0852 76.4367 29.8609 77.3269 30.0199 78.4095L31.1918 85.9989C31.4262 87.5179 32.8157 88.5574 34.2917 88.3162L41.6661 87.113C42.718 86.9465 43.7727 87.4289 44.3586 88.3478L48.4239 94.7915C49.2442 96.0865 50.9128 96.4483 52.1684 95.6041L58.4323 91.4174C59.3224 90.8173 60.4803 90.8173 61.3871 91.4174L67.6483 95.6041C68.9066 96.4483 70.5891 96.0721 71.3927 94.7915L75.4608 88.3478C76.0439 87.4289 77.0986 86.9321 78.1505 87.113L85.5249 88.3162C87.0009 88.5574 88.3932 87.5179 88.6248 85.9989L89.7967 78.4095C89.9585 77.3269 90.7314 76.4367 91.7721 76.1525L98.9848 74.1654C100.433 73.772 101.281 72.2386 100.899 70.7483L98.968 63.3254C98.6918 62.2543 99.0434 61.1258 99.8748 60.4338L105.67 55.601C106.839 54.6362 107.015 52.8759 106.08 51.6871ZM81.1053 40.4997L55.8849 66.4553C53.8369 68.563 50.5166 68.563 48.4686 66.4553L37.4223 55.0899C35.3743 52.9822 35.3743 49.5622 37.4223 47.4545C39.4702 45.3468 42.7934 45.3468 44.8413 47.4545L52.1851 55.0124L73.7029 32.8672C75.7509 30.7595 79.074 30.7595 81.122 32.8672C83.1533 34.9749 83.1533 38.392 81.1053 40.4997Z" fill="#371762" />
+            </svg>
+
             <p className="subtituloCard">Co-Chair TBM Council Global</p>
             <p className="descricaoCard">Liderança Global</p>
           </div>
@@ -100,6 +153,87 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="solucoes">
+        <h1 className='tituloSolucoes'>Soluções que transformam tecnologia em valor</h1>
+        <h2 className='subtituloSolucoes'>Gerenciar investimentos em tecnologia ficou <span className="text-purple-950">mais difícil e mais caro</span></h2>
+
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+          {/* Grid com 3 Cards de Métricas em Gráfico Donut */}
+          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {challengeMetrics.map((item, idx) => (
+              <article
+                key={idx}
+                className="flex flex-col justify-between rounded-2xl bg-white p-8 text-zinc-900 shadow-xl"
+              >
+                <h3 className="text-base font-bold text-purple-950">{item.title}</h3>
+
+                {/* Gráfico Donut Renderizado em SVG Nativo */}
+                <div className="my-8 flex items-center justify-center">
+                  <div className="relative flex h-36 w-36 items-center justify-center">
+                    <svg
+                      className="h-full w-full -rotate-90"
+                      viewBox="0 0 36 36"
+                      aria-hidden="true"
+                    >
+                      {/* Círculo base (cinza) */}
+                      <path
+                        className="text-zinc-100"
+                        strokeWidth="4"
+                        stroke="currentColor"
+                        fill="none"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      {/* Círculo de progresso (roxo) */}
+                      <path
+                        className="text-purple-700"
+                        strokeDasharray={`${item.percentage}, 100`}
+                        strokeWidth="4.5"
+                        strokeLinecap="round"
+                        stroke="currentColor"
+                        fill="none"
+                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                    </svg>
+                    {/* Percentual no centro */}
+                    <span className="absolute text-2xl font-black text-purple-950">
+                      {item.percentage}%
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-sm leading-relaxed text-zinc-600">{item.description}</p>
+                <span className="mt-4 block text-xs font-semibold text-zinc-400">
+                  {item.source}
+                </span>
+              </article>
+            ))}
+          </div>
+
+          {/* Linha Inferior com 3 Dores Adicionais */}
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div className="flex items-center justify-between rounded-xl bg-white/10 p-5 backdrop-blur-md border border-white/10">
+              <span className="text-sm font-medium text-white">Processos manuais e lentos</span>
+              <FileSpreadsheet className="h-6 w-6 text-purple-300" aria-hidden="true" />
+            </div>
+
+            <div className="flex items-center justify-between rounded-xl bg-white/10 p-5 backdrop-blur-md border border-white/10">
+              <span className="text-sm font-medium text-white">
+                Falta de métricas e indicadores claros
+              </span>
+              <Gauge className="h-6 w-6 text-purple-300" aria-hidden="true" />
+            </div>
+
+            <div className="flex items-center justify-between rounded-xl bg-white/10 p-5 backdrop-blur-md border border-white/10">
+              <span className="text-sm font-medium text-white">
+                Dificuldade de orçamentação e chargeback
+              </span>
+              <TrendingDown className="h-6 w-6 text-purple-300" aria-hidden="true" />
+            </div>
+          </div>
+
+        </div>
+      </section>
 
     </main>
   </>
@@ -140,61 +274,6 @@ export default function Home() {
 //   Phone,
 //   ArrowRight,
 // } from "lucide-react";
-
-// /* ==========================================================================
-//    TIPOS E INTERFACES (TypeScript)
-//    Garantem tipagem estática e facilitam a separação em mock data ou CMS
-//    ========================================================================== */
-
-// interface StatMetric {
-//   percentage: number;
-//   title: string;
-//   description: string;
-//   source: string;
-// }
-
-// interface SectorItem {
-//   id: string;
-//   name: string;
-//   icon: React.ElementType;
-// }
-
-// interface StepItem {
-//   id: number;
-//   stepNumber: string;
-//   title: string;
-//   icon: React.ElementType;
-//   description: string;
-// }
-
-// /* ==========================================================================
-//    DADOS ESTRUTURADOS (Mocks baseados no Layout do Figma)
-//    ========================================================================== */
-
-// // 1. Métricas de Desafio (Gráficos circulares da seção roxa)
-// const challengeMetrics: StatMetric[] = [
-//   {
-//     percentage: 82,
-//     title: "Falta de visibilidade nos custos de TI",
-//     description:
-//       "dos líderes não sabem exatamente para onde vai cada centavo investido em nuvem e licenças.",
-//     source: "Fonte: Gartner 2024",
-//   },
-//   {
-//     percentage: 67,
-//     title: "Falta de alinhamento com o negócio",
-//     description:
-//       "dos CFOs consideram que os investimentos em tecnologia não geram o retorno estratégico esperado.",
-//     source: "Fonte: McKinsey Global",
-//   },
-//   {
-//     percentage: 32,
-//     title: "Desperdício com Cloud e SaaS",
-//     description:
-//       "do orçamento total de TI é desperdiçado em recursos ociosos e ferramentas sobrepostas.",
-//     source: "Fonte: Flexera State of Cloud",
-//   },
-// ];
 
 // // 2. Setores de Atuação
 // const sectorsData: SectorItem[] = [
@@ -363,106 +442,6 @@ export default function Home() {
 //               </article>
 
 //             </div>
-//           </div>
-//         </section>
-
-//         {/* ====================================================================
-//             5. SEÇÃO DESAFIOS (Banner Escuro com Gráficos Donut & Dores)
-//             Semântica: <section> com estilo dark roxo fechado
-//             ==================================================================== */}
-//         <section
-//           id="beneficios"
-//           aria-labelledby="desafios-title"
-//           className="relative bg-purple-950 py-24 text-white"
-//         >
-//           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-//             {/* Cabeçalho da Seção */}
-//             <div className="mx-auto max-w-3xl text-center">
-//               <p className="text-xs font-bold tracking-widest text-purple-300 uppercase">
-//                 O DESAFIO QUE A MAIORIA DAS EMPRESAS ENFRENTA
-//               </p>
-//               <h2
-//                 id="desafios-title"
-//                 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-//               >
-//                 Gerenciar investimentos em tecnologia ficou mais difícil e mais caro
-//               </h2>
-//             </div>
-
-//             {/* Grid com 3 Cards de Métricas em Gráfico Donut */}
-//             <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
-//               {challengeMetrics.map((item, idx) => (
-//                 <article
-//                   key={idx}
-//                   className="flex flex-col justify-between rounded-2xl bg-white p-8 text-zinc-900 shadow-xl"
-//                 >
-//                   <h3 className="text-base font-bold text-purple-950">{item.title}</h3>
-
-//                   {/* Gráfico Donut Renderizado em SVG Nativo */}
-//                   <div className="my-8 flex items-center justify-center">
-//                     <div className="relative flex h-36 w-36 items-center justify-center">
-//                       <svg
-//                         className="h-full w-full -rotate-90"
-//                         viewBox="0 0 36 36"
-//                         aria-hidden="true"
-//                       >
-//                         {/* Círculo base (cinza) */}
-//                         <path
-//                           className="text-zinc-100"
-//                           strokeWidth="4"
-//                           stroke="currentColor"
-//                           fill="none"
-//                           d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-//                         />
-//                         {/* Círculo de progresso (roxo) */}
-//                         <path
-//                           className="text-purple-700"
-//                           strokeDasharray={`${item.percentage}, 100`}
-//                           strokeWidth="4.5"
-//                           strokeLinecap="round"
-//                           stroke="currentColor"
-//                           fill="none"
-//                           d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-//                         />
-//                       </svg>
-//                       {/* Percentual no centro */}
-//                       <span className="absolute text-2xl font-black text-purple-950">
-//                         {item.percentage}%
-//                       </span>
-//                     </div>
-//                   </div>
-
-//                   <p className="text-sm leading-relaxed text-zinc-600">{item.description}</p>
-//                   <span className="mt-4 block text-xs font-semibold text-zinc-400">
-//                     {item.source}
-//                   </span>
-//                 </article>
-//               ))}
-//             </div>
-
-//             {/* Linha Inferior com 3 Dores Adicionais */}
-//             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-//               <div className="flex items-center justify-between rounded-xl bg-white/10 p-5 backdrop-blur-md border border-white/10">
-//                 <span className="text-sm font-medium text-white">Processos manuais e lentos</span>
-//                 <FileSpreadsheet className="h-6 w-6 text-purple-300" aria-hidden="true" />
-//               </div>
-
-//               <div className="flex items-center justify-between rounded-xl bg-white/10 p-5 backdrop-blur-md border border-white/10">
-//                 <span className="text-sm font-medium text-white">
-//                   Falta de métricas e indicadores claros
-//                 </span>
-//                 <Gauge className="h-6 w-6 text-purple-300" aria-hidden="true" />
-//               </div>
-
-//               <div className="flex items-center justify-between rounded-xl bg-white/10 p-5 backdrop-blur-md border border-white/10">
-//                 <span className="text-sm font-medium text-white">
-//                   Dificuldade de orçamentação e chargeback
-//                 </span>
-//                 <TrendingDown className="h-6 w-6 text-purple-300" aria-hidden="true" />
-//               </div>
-//             </div>
-
 //           </div>
 //         </section>
 

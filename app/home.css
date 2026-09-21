@@ -93,7 +93,7 @@
 }
 
 .reconhecimento {
-    @apply flex flex-col items-center justify-around p-20 h-180 bg-violet-300;
+    @apply flex flex-col items-center justify-around p-20 h-180 bg-violet-200;
 }
 
 .cardReconhecimento {
