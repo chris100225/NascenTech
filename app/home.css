@@ -71,9 +71,7 @@
 }
 
 .sobre {
-    background: #ffffff;
-    background: linear-gradient(207deg, rgba(255, 255, 255, 1) 24%, rgba(227, 219, 234, 1) 76%, rgba(188, 169, 204, 1) 100%);
-    @apply text-black flex flex-col items-center justify-around p-20 h-180;
+    @apply text-black flex flex-col items-center justify-around p-20 h-180 bg-linear-to-t from-purple-100 to-white;
 }
 
 .tituloSobre {
@@ -93,7 +91,7 @@
 }
 
 .reconhecimento {
-    @apply flex flex-col items-center justify-around p-20 h-180 bg-violet-200;
+    @apply flex flex-col items-center justify-around p-20 h-180 bg-linear-to-t from-purple-200 to-purple-100;
 }
 
 .cardReconhecimento {
@@ -112,6 +110,17 @@
     @apply text-purple-950 font-medium text-lg text-center;
 }
 
+.solucoes {
+    @apply bg-purple-200 bg-[url(/bgSolucoes.png)] h-310 p-40 flex flex-col items-center justify-around ;
+}
+
+.tituloSolucoes {
+    @apply text-left text-4xl text-center uppercase text-white font-medium underline w-280;
+}
+
+.subtituloSolucoes {
+    @apply text-left text-4xl text-center font-medium w-280;
+}
 
 
 /* ==========================================================================
