@@ -1,6 +1,11 @@
 'use client';
 import './home.css';
-import GhostFibers from "@/components/GhostFibers/GhostFibers";
+import Pioneira from "@/public/Pioneira.svg";
+import Awards from "@/public/Awards.svg";
+import Global from "@/public/Global.svg";
+import Conselho from "@/public/Conselho.svg";
+import bgSolucoes from "@/public/bgSolucoes.png";
+
 import Header from "@/components/Header/Header";
 import WebThreads from '@/components/WebThreads/WebThreads';
 import { ArrowRight, Award, FileSpreadsheet, Gauge, Globe2, TrendingDown, Trophy, Users2 } from 'lucide-react';
@@ -123,27 +128,27 @@ export default function Home() {
         <div className="flex flex-inline justify-around w-280">
 
           <div className="cardReconhecimento">
-            <img src="/Pioneira.svg" alt="Medalha genérica" />
+            <img src={Pioneira.src} alt="Medalha genérica" />
 
             <p className="subtituloCard">Pioneira LatAm</p>
             <p className="descricaoCard">Única certificada na américa latina</p>
           </div>
 
           <div className="cardReconhecimento">
-            <img src="/Award.svg" alt="Simbolo de troféu genérico" />
+            <img src={Awards.src} alt="Simbolo de troféu genérico" />
 
             <p className="subtituloCard">TBM Award 2024</p>
             <p className="descricaoCard">Excelência que inspira</p>
           </div>
 
           <div className="cardReconhecimento">
-            <img src="/Global.svg" alt="Simbolo de globo terrestre com pessoas ao redor" />
+            <img src={Global.src} alt="Simbolo de globo terrestre com pessoas ao redor" />
 
             <p className="subtituloCard">Co-Chair TBM Council Global</p>
             <p className="descricaoCard">Liderança Global</p>
           </div>
           <div className="cardReconhecimento">
-            <img src="/Conselho.svg" alt="Pessoas reunidas" />
+            <img src={Conselho.src} alt="Pessoas reunidas" />
             <p className="subtituloCard">Conselho</p>
             <p className="descricaoCard">Liderança Global</p>
           </div>
@@ -151,7 +156,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="solucoes">
+      <section className="solucoes" style={{ backgroundImage: `url(${bgSolucoes.src})` }}>
         <h1 className='tituloSolucoes'>Soluções que transformam tecnologia em valor</h1>
         <h2 className='subtituloSolucoes'>Gerenciar investimentos em tecnologia ficou <span className="text-purple-300">mais difícil e mais caro</span></h2>
 
