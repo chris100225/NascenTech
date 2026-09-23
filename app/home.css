@@ -2,42 +2,47 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-
-
 .banner {
     @apply flex h-[90vh] flex-col flex-1 items-start justify-center bg-zinc-50 font-sans dark:bg-black;
-
 }
 
 .bannerGlass {
     position: absolute;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(17px);
-    -webkit-backdrop-filter: blur(17px);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(3500px);
+    -webkit-backdrop-filter: blur(3500px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 8px 32px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.5),
         inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-        inset 0 0 60px 30px rgba(255, 255, 255, 3);
+        inset 0 0 0px 0px rgba(255, 255, 255, 0);
     @apply flex h-120 w-220 flex-col text-pretty items-start justify-around ml-20 px-18 py-5 sm:py-12;
 }
 
+/* ---- Alinhamento interno do banner ---- */
+/* Em desktop: alinhado à esquerda com w-160.
+   Em mobile: centralizado, largura total. */
 .bannerAlinhamento {
     @apply flex h-120 w-160 flex-col items-center justify-around text-center sm:items-start sm:text-left;
 }
 
+/* ---- Título principal do banner ---- */
+/* Em desktop: text-4xl. Em mobile: text-xl para caber melhor. */
 .tituloBanner {
     animation: header 2s ease 0s 1 normal forwards;
     @apply text-4xl text-black font-medium text-justify;
 }
 
+/* ---- Subtítulo do banner ---- */
+/* Em desktop: text-xl. Em mobile: text-base. */
 .subtituloBanner {
     animation: header 2s ease 0s 1 normal forwards;
     @apply text-xl text-black font-medium text-justify;
 }
 
+/* Animação de entrada dos textos do banner */
 @keyframes subtituloBanner {
     0% {
         opacity: 0;
@@ -62,60 +67,428 @@
     }
 }
 
+/* ---- Botão primário do banner (roxo escuro cheio) ---- */
+/* Em mobile: largura total (w-full) e texto menor. */
 .botao1Banner {
     @apply inline-flex h-10 w-60 items-center justify-center rounded-[10px] bg-purple-950 px-6 text-base font-medium text-white shadow-sm transition-all duration-200 hover:bg-purple-900 hover:shadow-purple-900/20 hover:scale-105;
 }
 
+/* ---- Botão secundário do banner (transparente com borda) ---- */
+/* Mesmo tratamento: w-full em mobile. */
 .botao2Banner {
     @apply inline-flex h-10 w-60 items-center justify-center rounded-[10px] bg-transparent border-solid border-2 border-purple-950 text-purple-950 font-medium duration-200 hover:scale-105;
 }
 
+
+/* ==========================================================================
+   2. SEÇÃO "SOBRE A NASCENTECH"
+   ========================================================================== */
+
+/* ---- Container da seção sobre ---- */
+/* Em desktop: padding p-20 e altura fixa h-180.
+   Em mobile: padding reduzido, altura automática. */
 .sobre {
-    background: #ffffff;
-    background: linear-gradient(207deg, rgba(255, 255, 255, 1) 24%, rgba(227, 219, 234, 1) 76%, rgba(188, 169, 204, 1) 100%);
-    @apply text-black flex flex-col items-center justify-around p-20 h-180;
+    @apply text-black flex flex-col items-center justify-around p-20 h-180 bg-linear-to-t from-purple-100 to-white;
 }
 
+/* ---- Título "Sobre a NascenTech" ---- */
+/* Em desktop: w-280 (largura fixa para alinhamento).
+   Em mobile: largura total (w-full) e fonte menor. */
 .tituloSobre {
     @apply text-left text-4xl uppercase text-purple-950 font-medium underline w-280;
 }
 
+/* ---- Subtítulo ---- */
 .subtituloSobre {
     @apply text-left text-4xl font-medium w-280;
 }
 
+/* ---- Parágrafo descritivo ---- */
+/* Em mobile: text-lg ao invés de text-2xl para melhor legibilidade. */
 .descricaoSobre {
     @apply text-justify font-medium text-2xl w-280;
 }
 
+/* ---- Botão/link "Conheça a NascenTech" ---- */
 .botaoSobre {
     @apply inline-flex h-10 w-280 items-center justify-end text-2xl text-purple-950 font-semibold duration-200 hover:scale-105;
 }
 
+
+/* ==========================================================================
+   3. SEÇÃO "CREDENCIAIS E RECONHECIMENTO"
+   ========================================================================== */
+
+/* ---- Container da seção ---- */
+/* Em desktop: flex-row com gap grande.
+   Em mobile: flex-col empilhado. */
 .reconhecimento {
-    @apply flex flex-col items-center justify-around p-20 h-180 bg-violet-200;
+    @apply flex flex-col items-center justify-around pb-40 pt-20 h-220 bg-linear-to-t from-purple-200 to-purple-100;
 }
 
+/* ---- Card individual de reconhecimento ---- */
+/* Em desktop: w-60 (240px), tamanho fixo.
+   Em mobile: w-full para ocupar toda a largura disponível. */
 .cardReconhecimento {
     @apply flex flex-col items-center justify-around p-8 rounded-[10px] border-solid border-2 border-purple-950 w-60 h-85;
 }
 
+/* ---- Título da seção de reconhecimento ---- */
 .tituloReconhecimento {
     @apply text-center text-4xl uppercase text-purple-950 font-medium underline text-purple-950 text-4xl;
 }
 
+/* ---- Subtítulo dentro dos cards ---- */
 .subtituloCard {
     @apply text-purple-950 font-medium text-xl font-semibold text-center;
 }
 
+/* ---- Descrição dentro dos cards ---- */
 .descricaoCard {
     @apply text-purple-950 font-medium text-lg text-center;
 }
 
 
+/* ==========================================================================
+   4. SEÇÃO "SOLUÇÕES" (fundo escuro com gráficos donut)
+   ========================================================================== */
+
+/* ---- Container da seção soluções ---- */
+/* Em desktop: height h-310 com padding generoso.
+   Em mobile: altura automática, padding menor. */
+.solucoes {
+    @apply bg-purple-200 h-310 bg-no-repeat p-40 pb-50 flex flex-col items-center justify-around;
+}
+
+/* ---- Título da seção soluções ---- */
+.tituloSolucoes {
+    @apply text-left text-4xl text-center uppercase text-white font-medium underline w-280;
+}
+
+/* ---- Subtítulo da seção soluções ---- */
+.subtituloSolucoes {
+    @apply text-left text-4xl text-center font-medium w-280;
+}
+
 
 /* ==========================================================================
-   LAYOUT GERAL E CONTAINER
+   5. SEÇÃO "SETORES EM QUE ATUAMOS"
+   ========================================================================== */
+
+/* ---- Container da seção setores ---- */
+/* Em desktop: padding p-40.
+   Em mobile: padding menor, altura automática. */
+.setores {
+    @apply text-black flex flex-col items-center justify-around p-40 h-200 bg-linear-to-t from-violet-300 to-purple-200;
+}
+
+/* ---- Título "Setores em que atuamos" ---- */
+.tituloSetores {
+    @apply text-center text-4xl uppercase text-purple-950 font-medium underline w-280;
+
+}
+
+/* ---- Subtítulo descritivo dos setores ---- */
+.subtituloSetores {
+    @apply text-center text-4xl font-medium w-280;
+
+}
+
+/* ---- Card de setor individual ---- */
+/* Em desktop: w-60 (fixo).
+   Em mobile: w-full para ocupar toda a largura. */
+.cardSetores {
+    @apply flex flex-row items-center justify-around p-3 w-60 h-25 bg-white/60 rounded-2xl;
+}
+
+/* ---- Texto dentro do card de setor ---- */
+.textoCard {
+    @apply font-medium text-2xl text-center;
+}
+
+
+/* ==========================================================================
+   ==========================================================================
+   MEDIA QUERIES - RESPONSIVIDADE MOBILE E TABLET
+   ==========================================================================
+   ========================================================================== */
+
+
+/* ==========================================================================
+   MOBILE (até 640px)
+   Telas de celulares. Layouts em coluna, fontes menores,
+   larguras flexíveis (w-full), padding e margin reduzidos.
+   ========================================================================== */
+@media (max-width: 640px) {
+
+
+
+    /* Glassmorphism card no mobile */
+    .bannerGlass {
+        @apply w-[100vw] h-auto px-5 py-8 m-0;
+        /* Alterado de position: absolute para relative em mobile 
+           para acompanhar o conteúdo sem 'vazar' da section */
+        position: absolute;
+        z-index: 10;
+        /* Mantém o cartão acima do canvas WebThreads */
+
+    }
+
+    /* Alinhamento interno: centralizado, largura total */
+    .bannerAlinhamento {
+        @apply w-full h-auto items-center text-center gap-6;
+    }
+
+    /* Título do banner: fonte menor para legibilidade em mobile */
+    .tituloBanner {
+        @apply text-xl text-center;
+    }
+
+    /* Subtítulo do banner: fonte ainda menor */
+    .subtituloBanner {
+        @apply text-base text-center;
+    }
+
+    /* Botões do banner: largura total, empilhados verticalmente
+       (o container pai com inline-flex gap-4 vira flex-col) */
+    .botao1Banner {
+        @apply w-full text-sm h-11;
+    }
+
+    .botao2Banner {
+        @apply w-full text-sm h-11;
+    }
+
+
+    /* ---- SEÇÃO SOBRE ---- */
+
+    /* Seção sobre: altura automática, padding lateral reduzido */
+    .sobre {
+        @apply h-auto p-6 py-12 gap-6;
+    }
+
+    /* Títulos: largura total e fonte menor */
+    .tituloSobre {
+        @apply w-full text-2xl text-center;
+    }
+
+    .subtituloSobre {
+        @apply w-full text-xl text-center;
+    }
+
+    /* Descrição: largura total, fonte menor */
+    .descricaoSobre {
+        @apply w-full text-base;
+    }
+
+    /* Botão "Conheça a NascenTech": largura total, centralizado */
+    .botaoSobre {
+        @apply w-full text-lg justify-center;
+    }
+
+
+    /* ---- SEÇÃO RECONHECIMENTO ---- */
+
+    /* Container: altura automática, padding menor */
+    .reconhecimento {
+        @apply h-auto pb-12 pt-10 px-4 gap-8;
+    }
+
+    /* Título: fonte menor */
+    .tituloReconhecimento {
+        @apply text-2xl;
+    }
+
+    /* Grid de cards: empilha em coluna única */
+    .reconhecimento>div.flex {
+        @apply flex-col w-full items-center gap-6;
+    }
+
+    /* Card individual: largura total, altura automática */
+    .cardReconhecimento {
+        @apply w-80 h-auto py-6;
+    }
+
+
+    /* ---- SEÇÃO SOLUÇÕES ---- */
+
+    /* Container: altura automática, padding menor */
+    .solucoes {
+        @apply h-[2300px] p-6 pt-35 pb-40;
+    }
+
+    /* Títulos: largura total, fonte menor */
+    .tituloSolucoes {
+        @apply w-full text-xl;
+    }
+
+    .subtituloSolucoes {
+        @apply w-full text-lg;
+    }
+
+
+    /* ---- SEÇÃO SETORES ---- */
+
+    /* Container: padding menor, altura automática */
+    .setores {
+        @apply h-auto p-6 py-12 gap-6;
+    }
+
+    /* Títulos: largura total e fonte menor */
+    .tituloSetores {
+        @apply w-full text-2xl;
+    }
+
+    .subtituloSetores {
+        @apply w-full text-lg;
+    }
+
+    /* Card de setor: largura total */
+    .cardSetores {
+        @apply w-full;
+    }
+
+    /* Texto do card de setor: fonte menor */
+    .textoCard {
+        @apply text-lg;
+    }
+}
+
+
+/* ==========================================================================
+   TABLET (641px a 1024px)
+   iPads e tablets. Layouts intermediários: 2 colunas quando possível,
+   fontes e espaçamentos entre mobile e desktop.
+   ========================================================================== */
+@media (min-width: 641px) and (max-width: 1024px) {
+
+    /* ---- BANNER ---- */
+
+    .banner {
+        @apply h-[85vh] items-center;
+    }
+
+    /* Glassmorphism card: largura intermediária, centralizado,
+       margin-left menor que desktop */
+    .bannerGlass {
+        @apply w-[80vw] h-auto ml-8;
+    }
+
+    /* Alinhamento interno: largura total */
+    .bannerAlinhamento {
+        @apply w-full h-auto gap-5;
+    }
+
+    /* Título do banner: font intermediária */
+    .tituloBanner {
+        @apply text-3xl;
+    }
+
+    /* Subtítulo: font intermediária */
+    .subtituloBanner {
+        @apply text-lg;
+    }
+
+    /* Botões: largura fixa intermediária */
+    .botao1Banner {
+        @apply w-52;
+    }
+
+    .botao2Banner {
+        @apply w-52;
+    }
+
+
+    /* ---- SEÇÃO SOBRE ---- */
+
+    /* Seção sobre: padding intermediário, altura automática */
+    .sobre {
+        @apply h-auto p-10 py-16 gap-6;
+    }
+
+    /* Títulos: largura total, fonte intermediária */
+    .tituloSobre {
+        @apply w-full text-3xl;
+    }
+
+    .subtituloSobre {
+        @apply w-full text-2xl;
+    }
+
+    .descricaoSobre {
+        @apply w-full text-xl;
+    }
+
+    .botaoSobre {
+        @apply w-full text-xl;
+    }
+
+
+    /* ---- SEÇÃO RECONHECIMENTO ---- */
+
+    /* Container: altura automática */
+    .reconhecimento {
+        @apply h-auto pb-20 pt-14 px-6 gap-8;
+    }
+
+    /* Grid de cards: grid 2x2 em tablet */
+    .reconhecimento>div.flex {
+        @apply flex-wrap w-full justify-center gap-6;
+    }
+
+    /* Cards: largura fixa intermediária que permite 2 por linha */
+    .cardReconhecimento {
+        @apply w-[45%] h-auto py-6;
+    }
+
+
+    /* ---- SEÇÃO SOLUÇÕES ---- */
+
+    /* Container: altura automática, padding intermediário */
+    .solucoes {
+        @apply h-auto p-10 py-16;
+    }
+
+    /* Títulos: largura total, fontes intermediárias */
+    .tituloSolucoes {
+        @apply w-full text-3xl;
+    }
+
+    .subtituloSolucoes {
+        @apply w-full text-2xl;
+    }
+
+
+    /* ---- SEÇÃO SETORES ---- */
+
+    /* Container: padding intermediário, altura automática */
+    .setores {
+        @apply h-auto p-10 py-16 gap-6;
+    }
+
+    /* Títulos: largura total */
+    .tituloSetores {
+        @apply w-full text-3xl;
+    }
+
+    .subtituloSetores {
+        @apply w-full text-2xl;
+    }
+
+    /* Card de setor: largura intermediária para grid 2x4 */
+    .cardSetores {
+        @apply w-full;
+    }
+
+    /* Texto do card: fonte intermediária */
+    .textoCard {
+        @apply text-xl;
+    }
+}
+
+
+/* ==========================================================================
+   LAYOUT GERAL E CONTAINER - SEÇÕES COMENTADAS (mantidas para referência)
    ========================================================================== */
 /* .nav-desktop {
     @apply hidden items-center gap-8 md:flex;
