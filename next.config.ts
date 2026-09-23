@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/NascenTech',
+  // basePath: '/NascenTech',
 };
 
 export default nextConfig;
