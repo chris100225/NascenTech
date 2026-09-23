@@ -8,6 +8,14 @@ import bgSolucoes from "@/public/bgSolucoes.png";
 import Mercado from "@/public/Mercado.svg";
 import Processos from "@/public/Processos.svg";
 import Visibilidade from "@/public/Visibilidade.svg";
+import Banco from "@/public/Banco.svg";
+import Cartao from "@/public/Cartao.svg";
+import Code from "@/public/Code.svg";
+import Escudo from "@/public/Escudo.svg";
+import Fabrica from "@/public/Fabrica.svg";
+import Prefeitura from "@/public/Prefeitura.svg";
+import Remedio from "@/public/Remedio.svg";
+import Talheres from "@/public/Talher.svg";
 import Header from "@/components/Header/Header";
 import WebThreads from '@/components/WebThreads/WebThreads';
 import { ArrowRight, Award, FileSpreadsheet, Gauge, Globe2, TrendingDown, Trophy, Users2 } from 'lucide-react';
@@ -76,7 +84,7 @@ export default function Home() {
           frequency={1}
           spread={0.09}
           taper={0.75}
-          position={0.5}
+          position={0.6}
           fanMode="left"
           glow={0.023}
           falloff={0.48}
@@ -237,6 +245,48 @@ export default function Home() {
 
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="setores">
+        <h1 className='tituloSetores'>Setores em que atuamos</h1>
+        <h2 className='subtituloSetores'>Aplicamos nossa experiência em gestão financeira de tecnologia e transformação em diferentes contextos e níveis de maturidade.</h2>
+        <div className='grid grid-cols-1 gap-7   md:grid-cols-4 mt-10'>
+          <div className="cardSetores">
+            <img src={Banco.src} alt="" />
+            <p className='textoCard'> Bancário</p>
+          </div>
+          <div className="cardSetores">
+            <img src={Cartao.src} alt="" />
+            <p className='textoCard'>Serviços Financeiros</p>
+          </div>
+          <div className="cardSetores">
+            <img src={Fabrica.src} alt="" />
+            <p className='textoCard'>Manufatura</p>
+          </div>
+          <div className="cardSetores">
+            <img src={Talheres.src} alt="" />
+            <p className='textoCard'>Alimentos e bebidas</p>
+          </div>
+          <div className="cardSetores">
+            <img src={Code.src} alt="" />
+            <p className='textoCard'> Software e Tecnologia</p>
+          </div>
+          <div className="cardSetores">
+            <img src={Remedio.src} alt="" />
+            <p className='textoCard'> Farmacêutico</p>
+          </div>
+          <div className="cardSetores">
+            <img src={Escudo.src} alt="" />
+            <p className='textoCard'> Seguros</p>
+          </div>
+          
+          <div className="cardSetores">
+            <img src={Prefeitura.src} alt="" />
+            <p className='textoCard'> Setor Público</p>
+          </div>
+
+
         </div>
       </section>
 
