@@ -5,7 +5,9 @@ import Awards from "@/public/Awards.svg";
 import Global from "@/public/Global.svg";
 import Conselho from "@/public/Conselho.svg";
 import bgSolucoes from "@/public/bgSolucoes.png";
-
+import Mercado from "@/public/Mercado.svg";
+import Processos from "@/public/Processos.svg";
+import Visibilidade from "@/public/Visibilidade.svg";
 import Header from "@/components/Header/Header";
 import WebThreads from '@/components/WebThreads/WebThreads';
 import { ArrowRight, Award, FileSpreadsheet, Gauge, Globe2, TrendingDown, Trophy, Users2 } from 'lucide-react';
@@ -214,25 +216,25 @@ export default function Home() {
           </div>
 
 
-          {/* Linha Inferior com 3 Dores Adicionais */}
           <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3">
-            <div className="flex items-center justify-between rounded-xl bg-white/10 p-5 backdrop-blur-md border border-white/10">
-              <span className="text-sm font-medium text-white">Processos manuais e lentos</span>
-              <FileSpreadsheet className="h-6 w-6 text-purple-300" aria-hidden="true" />
+            <div className="flex items-center justify-between rounded-xl bg-white/90 p-5 backdrop-blur-md border border-white/10">
+              <span className="text-lg font-medium text-purple-950">Processos manuais e rígidos</span>
+              <img src={Processos.src} alt="folha de papel genérica" className="h-15 w-15" />
             </div>
 
-            <div className="flex items-center justify-between rounded-xl bg-white/10 p-5 backdrop-blur-md border border-white/10">
-              <span className="text-sm font-medium text-white">
-                Falta de métricas e indicadores claros
+            <div className="flex items-center justify-between rounded-xl bg-white/90 p-5 backdrop-blur-md border border-white/10">
+              <span className="text-lg font-medium text-purple-950">
+                Falta de visibilidade dos investimentos
               </span>
-              <Gauge className="h-6 w-6 text-purple-300" aria-hidden="true" />
+              <img src={Visibilidade.src} alt="Lupa genérica" className="h-15 w-15" />
             </div>
 
-            <div className="flex items-center justify-between rounded-xl bg-white/10 p-5 backdrop-blur-md border border-white/10">
-              <span className="text-sm font-medium text-white">
-                Dificuldade de orçamentação e chargeback
+            <div className="flex items-center justify-between rounded-xl bg-white/90 p-5 backdrop-blur-md border border-white/10">
+              <span className="text-lg font-medium text-purple-950">
+                Mudanças imprevisíveis no mercado
               </span>
-              <TrendingDown className="h-6 w-6 text-purple-300" aria-hidden="true" />
+              <img src={Mercado.src} alt="Gráfico de linha genérico" className="h-15 w-15" />
+
             </div>
           </div>
         </div>
